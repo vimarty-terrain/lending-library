@@ -74,7 +74,14 @@
 		<script type="text/javascript">
 		  document.addEventListener('DOMContentLoaded', function() {
 	      var URL = "0AvFUWxii39gXdGxhcjhzYzlBX2pyVFZZU2VjZ3BHZ3c"
-	      Tabletop.init( { key: CnyjhTe, callback: initialize, simpleSheet: true } )
+	      Papa.parse('https://docs.google.com/spreadsheets/d/e/2PACX-1vRj2bXWnTfqgJXvGGWqPPwISTTf_umhSbsFBLdZreeunxSBDpbojd_z7P4LvXjAzD4zbLu4-CnyjhTe/pubhtml?gid=1836113177&single=true', {
+          download: true,
+          header: true,
+          complete: function(results) {
+            var data = results.data
+            console.log(data)
+          }
+        })
 	    })
 		</script>
 	</body>
